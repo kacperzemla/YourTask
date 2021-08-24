@@ -1,0 +1,33 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'Tasks/register.css' %}">
+
+<div class="register">
+
+    <div class="context">
+        <img class="logo" src="{% static 'Tasks/images/Shared goals-amico.svg' %}">
+        <div class="wrapper">
+            <h1>Get's started</h1>
+            <form class="register__form">
+                <label>
+                    <h4 class="input__title">Email<span>*</span></h4>
+                    <input>
+                </label>
+                <label>
+                    <h4 class="input__title">Password<span>*</span></h4>
+                    <input>
+                </label>
+                <label>
+                    <h4 class="input__title">Confirm Password<span>*</span></h4>
+                    <input>
+                </label>
+                <button class="register__button">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="image">
+        <h1 class="image__header">Achieve your<br><span>GOALS</span> </h1>
+        <img class="image__img" src="{% static 'Tasks/images/Winners-pana.svg' %}">
+    </div>
+
+</div>

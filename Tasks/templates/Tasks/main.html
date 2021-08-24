@@ -1,6 +1,6 @@
 {% load static %} 
 <link rel="stylesheet" type="text/css" href="{% static 'Tasks/main.css' %}">
-<link rel="stylesheet" type="text/css" href="index.css">
+<!-- <link rel="stylesheet" type="text/css" href="index.css"> -->
 <div class="main">
     <nav class="navigation">
         <h1 class="logo"><span>Y</span>our<span>T</span>asks</h1>
@@ -17,7 +17,7 @@
         <div class="register__context">
             <h1 class="register__header">Change your <span>life</span> with<br> our application.</h1>
             <p class="register__paragraph"><span>Manage</span> your tasks with us.</p>
-            <button class="register__button"><p>Register Now</p></button>
+            <a href="{% url 'register' %}" class="register__link"><button class="register__button"><p>Register Now</p></button></a>
         </div>
     </section>
     <section class="contact">

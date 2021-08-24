@@ -7,4 +7,7 @@ def index(request):
     context = {}
     return render(request, 'Tasks/main.html', context)
     
-
+def register(request):
+    context = {
+    }
+    return render(request, 'Tasks/register.html', context)

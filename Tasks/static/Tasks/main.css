@@ -102,6 +102,10 @@ body{
     color: #666666;
 }
 
+.register__link{
+    text-align: center;
+}
+
 .register__button, .contact__button{
     font-size: 2rem;
     border-radius: 50%;
@@ -122,9 +126,11 @@ body{
     overflow: hidden;
 }
 
-.register__button >  p, .contact__button > p{
+.register__button   p, .contact__button  p{
     position: relative;
+    color: #666666;
     z-index: 2;
+    text-decoration: none;
 }
 
 .register__button:before, .contact__button:before, .navigation__list__item-button button:before{
@@ -141,8 +147,12 @@ body{
     transition: all 0.6s ease;
 }
 
-.register__button:hover, .contact__button:hover { 
+.register__button:hover, .contact__button:hover{ 
     cursor: pointer;
+
+}
+
+.register__button:hover p, .contact__button:hover p{
     color: #FF5555;
 }
 
