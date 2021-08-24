@@ -1,12 +1,13 @@
-{% load static %}
+{% load static %} 
 <link rel="stylesheet" type="text/css" href="{% static 'Tasks/main.css' %}">
+<link rel="stylesheet" type="text/css" href="index.css">
 <div class="main">
     <nav class="navigation">
         <h1 class="logo"><span>Y</span>our<span>T</span>asks</h1>
         <ul class="navigation__list">
-            <li class="navigation__list__item"><a href="">Contact</a></li>
-            <li class="navigation__list__item red"><a href="">Sign In</a></li>
-            <li class="navigation__list__item-button"><button>Sign Up</button></li>
+            <li class="navigation__list__item"><a href="" class="hover-underline-animation">Contact</a></li>
+            <li class="navigation__list__item red"><a href="" class="hover-underline-animation">Sign In</a></li>
+            <li class="navigation__list__item-button"><button><span>Sign Up</span></button></li>
         </ul>
     </nav>
     <section class="register">
@@ -16,10 +17,20 @@
         <div class="register__context">
             <h1 class="register__header">Change your <span>life</span> with<br> our application.</h1>
             <p class="register__paragraph"><span>Manage</span> your tasks with us.</p>
-            <button class="register__button">Register Now</button>
+            <button class="register__button"><p>Register Now</p></button>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="contact__context">
+            <h1 class="contact__header">We are open for your <span>creativity</span>.</h1>
+            <p class="contact__paragraph">Share your <span>ideas</span> to make our app better.</p>
+            <button class="contact__button"><p>Contact Us</p></button>
+        </div>
+        <div class="contact__image">
+           <img src="{% static 'Tasks/images/Completed-amico.svg' %}" alt="Girl image with a pencil and list of tasks">
         </div>
     </section>
 </div>
 
-<!-- <a href="https://storyset.com/work">Work illustrations by Storyset</a> -->
-<!-- <a href="https://storyset.com/work">Work illustrations by Storyset</a> -->
+<a href="https://storyset.com/work">Work illustrations by Storyset</a>
+<a href="https://storyset.com/work">Work illustrations by Storyset</a>

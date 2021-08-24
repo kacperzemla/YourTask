@@ -8,15 +8,12 @@ body{
     font-family: 'Ubuntu', sans-serif;
 }
 
-.main{
-    padding: 3rem;
-}
-
 
 .navigation{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 2rem;
 }
 
 .logo span{
@@ -54,14 +51,24 @@ body{
     background-color: #FF5555;
     box-shadow: 0 4px 4px 0 #ff535380;
     font-weight: bold;
+    border: 2px solid #FF5555;
+    position: relative;
+    overflow: hidden;
+}
+
+.navigation__list__item-button button span{
+    position: relative;
+    z-index: 1;
 }
 
 .navigation__list__item-button button:hover{
     cursor: pointer;
+    color: #FF5555;
 }
 
 .register{
     display: flex;
+    padding: 2rem;
 }
 
 .register__image{
@@ -80,36 +87,102 @@ body{
     text-align: left;
 }
 
-.register__context span{
+.register__context span, .contact span{
     color: #FF5555;
 }
-.register__header{
+.register__header, .contact__header{
     font-size: 2rem;
 }
 
-.register__paragraph{
+.register__paragraph, .contact__paragraph{
     font-size: 1.3rem;
 }
 
-.register__paragraph, .register__header{
+.register__paragraph, .register__header, .contact__header, .contact__paragraph{
     color: #666666;
 }
 
-.register__button{
+.register__button, .contact__button{
     font-size: 2rem;
     border-radius: 50%;
-    padding: 3rem 1rem 3rem 1rem;
+    padding: 1rem;
     width: 70%;
     margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
     border-style: none;
     background-color: #FF5555;
+    border: 2px solid #FF5555;
+    z-index: 1;
     box-shadow: 0 5px 4px 0 #ff535380;
+    position: relative;
     font-weight: bold;
     color: #666666;
+    /* transition: background 0.2s ease-in; */
+    overflow: hidden;
 }
 
-.register__button:hover { 
-    cursor: pointer;
+.register__button >  p, .contact__button > p{
+    position: relative;
+    z-index: 2;
 }
+
+.register__button:before, .contact__button:before, .navigation__list__item-button button:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 50%;
+    left: -100%;
+    z-index: 1;
+    transition: all 0.6s ease;
+}
+
+.register__button:hover, .contact__button:hover { 
+    cursor: pointer;
+    color: #FF5555;
+}
+
+.register__button:hover:before, .contact__button:hover:before, .navigation__list__item-button button:hover:before{
+    left: 0;
+}
+
+.contact{
+    display: flex;
+    background-color: #f1f1f1;
+    padding: 2rem;
+}
+
+.contact__context{
+    flex: 1;
+}
+
+.contact__image{
+    flex: 1;
+}
+
+.hover-underline-animation{
+    display:inline-block;
+    position:relative;
+    color:#666666;
+}
+     .hover-underline-animation::after{
+        content:'';
+        position:absolute;
+        width:100%;
+        transform:scaleX(0);
+        bottom: -100px;
+        height:2px;
+        bottom:0;
+        left:0;
+        background-color:#666666;
+        transform-origin:bottom right;
+        transition:transform 0.25s ease-out;
+    }
+     .hover-underline-animation:hover::after{
+        transform:scaleX(1);
+        transform-origin:bottom left;
+    }
