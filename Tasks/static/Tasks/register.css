@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.register{
+    display: flex;
+    height: 100vh;
+}
+
+.logo{
+    height: 7rem;
+}
+
+.wrapper{
+    width: 100%;
+    margin-left: 3rem;
+}
+
+.context{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.context h1{
+    font-size: 3rem;
+    color: #666666;
+    margin-bottom: 0;
+}
+
+.register__form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.register__form label{
+    display: flex;
+    color: #666666;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-weight: bold;
+}
+
+.input__title{
+    margin-bottom: 0;
+}
+
+.input__title span{
+    color: #FF5555;
+}
+
+.register__form input{
+    border: 1px solid #FF5555;
+    border-radius: 100px;
+    /* height: 2rem; */
+    padding: 1rem 0;
+    padding-left: 2rem;
+    font-size: 1.3rem;
+    width: 80%;
+    margin-top: 5px;
+}
+
+.register__form input:focus{
+    outline: none;
+}
+
+.register__button{
+    margin-top: 2rem;
+    width: 80%;
+    border: none;
+    background-color: #FF7878;
+    border-radius: 100px;
+    color: #fff;
+    padding: 1rem 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.image{
+    flex: 1;
+    background: linear-gradient(180deg, rgba(255, 85, 85, 0) 0%, #FF5555 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+
+.image h1{
+    /* position: absolute; */
+    /* top: 20%; */
+    font-size: 3rem;
+    color: #FF5555;
+    padding: 2rem;
+    text-align: center;
+}
+
+.image h1 span{
+    color: #fff;
+}
+
