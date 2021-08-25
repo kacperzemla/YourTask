@@ -11,3 +11,7 @@ def register(request):
     context = {
     }
     return render(request, 'Tasks/register.html', context)
+
+def login(request):
+    context = {}
+    return render(request, 'Tasks/login.html', context)
