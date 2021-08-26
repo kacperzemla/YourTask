@@ -110,3 +110,35 @@ body{
     color: #fff;
 }
 
+.information{
+    color: #666666;
+    font-weight: bold;
+}
+
+.information a{
+    text-decoration: none;
+    color: #FF5555;
+}
+
+@media (max-width: 900px){
+    .register{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .wrapper{
+        margin-left: 0;
+        
+    }
+    .context{
+        align-items: center;
+    }
+
+    .register__form{
+        align-items: center;
+    }
+
+    .register__form label{
+        align-items: center;
+    }
+}
