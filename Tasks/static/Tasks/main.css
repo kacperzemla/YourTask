@@ -196,3 +196,19 @@ body{
         transform:scaleX(1);
         transform-origin:bottom left;
     }
+
+@media (max-width: 900px){
+    .register{
+        flex-direction: column;
+    }
+
+    .contact__context{
+        text-align: center;
+        padding-bottom: 3rem;
+    }
+
+    .contact{
+        flex-direction: column;
+        text-align: center;
+    }
+}
