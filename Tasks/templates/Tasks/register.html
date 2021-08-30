@@ -8,24 +8,29 @@
         <a href="{% url 'main' %}"><img class="logo" src="{% static 'Tasks/images/Shared goals-amico.svg' %}"></a>
         <div class="wrapper">
             <h1>Get's started</h1>
-            <form class="register__form">
+            <form class="register__form" method="POST" action="">
+                {% csrf_token %}
                 <label>
                     <h4 class="input__title">Email<span>*</span></h4>
-                    <input class="email">
+                    <!-- <input class="email"> -->
+                    {{form.username}}
                     <div class="error__div">
                         <img src="{% static 'Tasks/images/icon-error.svg' %}"><p class="error"></p>
                     </div>
                 </label>
                 <label>
                     <h4 class="input__title">Password<span>*</span></h4>
-                    <input class="password">
+                    <!-- <input class="password">
+                     -->
+                     {{form.password1}}
                     <div class="error__div">
                         <img src="{% static 'Tasks/images/icon-error.svg' %}"><p class="error"></p>
                     </div>
                 </label>
                 <label>
                     <h4 class="input__title">Confirm Password<span>*</span></h4>
-                    <input class="passwordSecond">
+                    <!-- <input class="passwordSecond"> -->
+                    {{form.password2}}
                     <div class="error__div">
                         <img src="{% static 'Tasks/images/icon-error.svg' %}"><p class="error"></p>
                     </div>
