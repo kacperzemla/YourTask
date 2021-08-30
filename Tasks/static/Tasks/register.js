@@ -1,41 +1,54 @@
 const form = document.querySelector('.register__form')
-const email = document.querySelector('.email');
-const password = document.querySelector('.password')
-const password2 = document.querySelector('.passwordSecond')
+const email = document.querySelector('#id_username');
+const password = document.querySelector('#id_password1')
+const password2 = document.querySelector('#id_password2')
+email.required = false;
+password.required = false;
+password2.required = false;
 // const email = document.querySelector('.email')
 // email.style.border = '2px solid red'
 
 form.addEventListener('submit', (e) => {
-     
-     checkInputs();
-     e.preventDefault();
+
+     if(!checkInputs()){
+          e.preventDefault();
+     };
+
 })
 
 function checkInputs(){
     const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
     const password2Value = password2.value.trim();
-
+    let a = 0;
     if(emailValue === ''){
-         setError(email, 'Username cannot be blank');
+         setError(email, 'Email cannot be blank');
     } else if(!isEmail(emailValue)){
-        setError(email, 'Email is not valid')
+        setError(email, 'Email is not valid');
     } else{
          setSuccess(email)
+         a++;
     }
 
     if(passwordValue.length < 8){
-         setError(password, 'Password must be 8 characters long')
+         setError(password, 'Password must be 8 characters long');
     } else {
-         setSuccess(password)
+         setSuccess(password);
+         a++;
     }
 
     if(passwordValue !== password2Value){
-         setError(password2, 'Passwords don`t match')
-    } else {
-         setSuccess(password2)
-    }
+         setError(password2, 'Passwords don`t match');
 
+    } else {
+         setSuccess(password2);
+         a++
+    }
+    if(a === 3){
+         return true
+    } else {
+         return false
+    }
 }
 
 function setError(input, message){
