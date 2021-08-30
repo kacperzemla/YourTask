@@ -1,6 +1,6 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'Tasks/register.css' %}">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- <link rel="stylesheet" type="text/css" href="register.css"> -->
 <div class="register">
 
@@ -12,14 +12,23 @@
                 <label>
                     <h4 class="input__title">Email<span>*</span></h4>
                     <input class="email">
+                    <div class="error__div">
+                        <img src="{% static 'Tasks/images/icon-error.svg' %}"><p class="error"></p>
+                    </div>
                 </label>
                 <label>
                     <h4 class="input__title">Password<span>*</span></h4>
                     <input class="password">
+                    <div class="error__div">
+                        <img src="{% static 'Tasks/images/icon-error.svg' %}"><p class="error"></p>
+                    </div>
                 </label>
                 <label>
                     <h4 class="input__title">Confirm Password<span>*</span></h4>
                     <input class="passwordSecond">
+                    <div class="error__div">
+                        <img src="{% static 'Tasks/images/icon-error.svg' %}"><p class="error"></p>
+                    </div>
                 </label>
                 <button class="register__button">Create Account</button>
             </form>
