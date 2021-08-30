@@ -7,8 +7,8 @@
         <h1 class="logo"><span>Y</span>our<span>T</span>asks</h1>
         <ul class="navigation__list">
             <li class="navigation__list__item"><a href="" class="hover-underline-animation">Contact</a></li>
-            <li class="navigation__list__item red"><a href="" class="hover-underline-animation">Sign In</a></li>
-            <li class="navigation__list__item-button"><button><span>Sign Up</span></button></li>
+            <li class="navigation__list__item red"><a href="{% url 'login' %}" class="hover-underline-animation">Sign In</a></li>
+            <li class="navigation__list__item-button"><a href="{% url 'register' %}"><button><span>Sign Up</span></button></a></li>
         </ul>
     </nav>
     <section class="register">
