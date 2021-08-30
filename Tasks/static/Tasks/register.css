@@ -85,6 +85,13 @@ body{
     padding: 1rem 0;
     font-size: 1.3rem;
     font-weight: bold;
+    border: 2px solid #FF7878;
+}
+
+.register__button:hover{
+    background: #fff;
+    color: #FF7878;
+    cursor: pointer;
 }
 
 .image{
@@ -95,6 +102,7 @@ body{
     justify-content: center;
     position: relative;
     align-items: center;
+    height: calc(100% + 2rem);
 }
 
 .image h1{
@@ -110,3 +118,54 @@ body{
     color: #fff;
 }
 
+.information{
+    color: #666666;
+    font-weight: bold;
+}
+
+.information a{
+    text-decoration: none;
+    color: #FF5555;
+}
+
+.error{
+    padding: 0;
+    margin: 0;
+    /* display: none; */
+    font-size: 0.8rem;
+    color: rgb(253, 86, 86);
+}
+
+.error__div{
+    display: none;
+    margin: 5px 0 0 0;
+    align-items: center;
+}
+
+.error__div img{
+    margin-right: 5px;
+    fill: red;
+}
+
+@media (max-width: 900px){
+    .register{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .wrapper{
+        margin-left: 0;
+        
+    }
+    .context{
+        align-items: center;
+    }
+
+    .register__form{
+        align-items: center;
+    }
+
+    .register__form label{
+        align-items: center;
+    }
+}

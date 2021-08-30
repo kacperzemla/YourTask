@@ -1,12 +1,12 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'Tasks/login.css' %}">
-
+<link rel="stylesheet" type="text/css" href="{% static 'Tasks/register.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <div class="register">
 
     <div class="context">
-        <img class="logo" src="{% static 'Tasks/images/Shared goals-amico.svg' %}">
+        <a href="{% url 'main' %}"><img class="logo" src="{% static 'Tasks/images/Shared goals-amico.svg' %}"></a>
         <div class="wrapper">
-            <h1>Get's started</h1>
+            <h1>Login</h1>
             <form class="register__form">
                 <label>
                     <h4 class="input__title">Email<span>*</span></h4>
@@ -16,12 +16,9 @@
                     <h4 class="input__title">Password<span>*</span></h4>
                     <input>
                 </label>
-                <label>
-                    <h4 class="input__title">Confirm Password<span>*</span></h4>
-                    <input>
-                </label>
-                <button class="register__button">Create Account</button>
+                <button class="register__button">Log In</button>
             </form>
+            <p class="information">Not registered yet? <a href="{% url 'register' %}">Create an Account</a></p>
         </div>
     </div>
 
