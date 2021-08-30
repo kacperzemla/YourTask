@@ -85,6 +85,13 @@ body{
     padding: 1rem 0;
     font-size: 1.3rem;
     font-weight: bold;
+    border: 2px solid #FF7878;
+}
+
+.register__button:hover{
+    background: #fff;
+    color: #FF7878;
+    cursor: pointer;
 }
 
 .image{
