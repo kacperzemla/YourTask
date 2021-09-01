@@ -7,18 +7,23 @@
         <a href="{% url 'main' %}"><img class="logo" src="{% static 'Tasks/images/Shared goals-amico.svg' %}"></a>
         <div class="wrapper">
             <h1>Login</h1>
-            <form class="register__form">
+            <form class="register__form" method="POST" action="">
+                {% csrf_token %}
                 <label>
                     <h4 class="input__title">Email<span>*</span></h4>
-                    <input>
+                    <input name="username">
                 </label>
                 <label>
                     <h4 class="input__title">Password<span>*</span></h4>
-                    <input>
+                    <input name="password">
                 </label>
                 <button class="register__button">Log In</button>
             </form>
+            {% for message in messages %}
+            <p id='messages'>{{message}}</p>
+            {% endfor %}
             <p class="information">Not registered yet? <a href="{% url 'register' %}">Create an Account</a></p>
+           
         </div>
     </div>
 
