@@ -1,4 +1,37 @@
-<p>elo</p>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'Tasks/profile.css' %}">
+
+<!-- <p>elo</p>
 
 <span>Hello, {{ request.user }}</span>
-<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'logout' %}">Logout</a> -->
+<div class="container">
+    <nav class="navbar">
+        <a href="{% url 'main' %}"><img class="logo" src="{% static 'Tasks/images/Shared goals-amico.svg' %}"></a>
+        <ul class="navbar__list">
+            <li class="navbar__list__item"><a href=""><img class="clipboard-img"
+                        src="{% static 'Tasks/images/clipboard 1.svg' %}">Tasks</a></li>
+            <li class="navbar__list__item"><a href=""><img class="target-img"
+                        src="{% static 'Tasks/images/target 1.svg' %}">Goals</a></li>
+            <li class="navbar__list__item"><a href=""><img class="expenses-img"
+                        src="{% static 'Tasks/images/money 1.svg' %}">Expenses</a></li>
+        </ul>
+        <div class="image">
+            <img src="{% static 'Tasks/images/Personal goals-pana.svg' %}">
+        </div>
+    </nav>
+    <div class="profile">
+        <header class="profile__header">
+            <div class="profile__header__icon">
+                <img class="user-img" src="{% static 'Tasks/images/profile-user 1.svg' %}">
+                <img class="arrow-img" src="{% static 'Tasks/images/arrow-down-sign-to-navigate 1.svg' %}">
+            </div>
+            <div class="menu">
+                <a class="menu__link" href="{% url 'logout' %}">Logout</a>
+                <!-- <a class="menu__link" href="{% url 'logout' %}">Logout</a> -->
+            </div>
+        </header>
+    </div>
+</div>
+
+<script  type="text/javascript" src="{% static 'Tasks/profile.js' %}"></script>
