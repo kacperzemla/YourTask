@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+:root{
+    --text: #455A64;
+}
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container{
+    display: flex;
+    height: 100%;
+}
+
+
+
+.navbar{
+    width: 20%;
+    background-color: #FFD0D0;
+    position: relative;
+}
+
+.logo{
+    width: 80px;
+    margin: 1rem;
+}
+.navbar__list{
+    margin-top: 4rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    font-size: 24px;
+}
+
+.navbar__list__item{
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.navbar__list__item a{
+    display: flex;
+    align-items: center;
+}
+
+.navbar__list__item a img{
+    margin-right: 10px;
+}
+
+.navbar__list__item a{
+    text-decoration: none;
+    color: var(--text);
+}
+
+.image{
+    position: absolute;
+    bottom: 30px;
+    height: auto;
+    width: 100%;
+}
+
+.profile{
+    width: 100%;
+}
+
+.profile__header{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.5rem 3rem;
+}
+
+.profile__header > div:nth-child(1){
+    display: flex;
+    align-items: center;
+}
+
+.menu{
+    background-color: var(--text);
+    margin-top: 1rem;
+    border-radius: 30px;
+    display: none;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.active{
+    display: flex;
+}
+
+.menu__link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.user-img{
+    margin-right: 1rem;
+}
+
+.profile__header__icon:hover{
+    cursor: pointer;
+}
