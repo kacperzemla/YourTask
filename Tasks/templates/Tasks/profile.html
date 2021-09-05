@@ -1,19 +1,25 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'Tasks/profile.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'Tasks/menu.css' %}">
 
 <!-- <p>elo</p>
 
 <span>Hello, {{ request.user }}</span>
 <a href="{% url 'logout' %}">Logout</a> -->
+
 <div class="container">
     <nav class="navbar">
         <a href="{% url 'main' %}"><img class="logo" src="{% static 'Tasks/images/Shared goals-amico.svg' %}"></a>
         <ul class="navbar__list">
-            <li class="navbar__list__item"><a href=""><img class="clipboard-img"
+            <li class="navbar__list__item ">
+                <a href="{% url 'profile' %}" id="profile">
+                    <img class="clipboard-img" src="{% static 'Tasks/images/user 1.svg' %}">Profile</a>
+            </li>
+            <li class="navbar__list__item"><a href="{% url 'tasks' %}" id="tasks"><img class="clipboard-img"
                         src="{% static 'Tasks/images/clipboard 1.svg' %}">Tasks</a></li>
-            <li class="navbar__list__item"><a href=""><img class="target-img"
+            <li class="navbar__list__item"><a href="{% url 'goals' %}" id="goals"><img class="target-img"
                         src="{% static 'Tasks/images/target 1.svg' %}">Goals</a></li>
-            <li class="navbar__list__item"><a href=""><img class="expenses-img"
+            <li class="navbar__list__item"><a href="{% url 'expenses' %}" id="expenses"><img class="expenses-img"
                         src="{% static 'Tasks/images/money 1.svg' %}">Expenses</a></li>
         </ul>
         <div class="image">
@@ -31,7 +37,16 @@
                 <!-- <a class="menu__link" href="{% url 'logout' %}">Logout</a> -->
             </div>
         </header>
+        {% block content %}
+        {% endblock %}
     </div>
 </div>
 
-<script  type="text/javascript" src="{% static 'Tasks/profile.js' %}"></script>
+<script type="text/javascript" src="{% static 'Tasks/profile.js' %}"></script>
+{% block active %}
+<script>
+    const page = document.querySelector("#profile");
+    page.classList.add("active")
+</script>
+
+{% endblock %}

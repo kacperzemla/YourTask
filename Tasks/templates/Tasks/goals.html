@@ -1,0 +1,34 @@
+{% extends 'Tasks/profile.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'Tasks/goals.css' %}">
+<div class="goals-wrapper">
+    <div class="total">
+        <div class="total__text">
+            <h1 class="total__header">Total Goals Achieved</h1>
+            <p>1/3</p>
+        </div>
+        <div class="total__image">
+            <img src="{% static 'Tasks/images/In progress-pana  1.svg' %}">
+        </div>
+    </div>
+    <div class="mygoals">
+        <div class="mygoals__header">
+            <h1>My goals</h1>
+            <button>ADD</button>
+        </div>
+        <div class="mygoals__list">
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block active %}
+<script>
+    const page = document.querySelector("#goals");
+    page.classList.add("active")
+</script>
+
+{% endblock %}

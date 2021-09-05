@@ -3,9 +3,9 @@ const menu = document.querySelector('.menu')
 const arrow = document.querySelector('.arrow-img')
 
 user.addEventListener('click', () => {
-    menu.classList.toggle('active');
+    menu.classList.toggle('activeButton');
     arrow.style.transform = "rotate(180deg)";
-    if(!menu.classList.contains('active')){
+    if(!menu.classList.contains('activeButton')){
         arrow.style.transform = "rotate(0deg)";
     }
 })
