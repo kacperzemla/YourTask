@@ -47,3 +47,24 @@ def logoutUser(request):
 def profile(request):
     context = {}
     return render(request, 'Tasks/profile.html', context)
+
+def tasks(request):
+    context = {
+
+    }
+
+    return render(request, 'Tasks/tasks.html', context)
+
+def goals(request):
+    context = {
+
+    }
+
+    return render(request, 'Tasks/goals.html', context)
+
+def expenses(request):
+    context = {
+
+    }
+
+    return render(request, 'Tasks/expenses.html', context)

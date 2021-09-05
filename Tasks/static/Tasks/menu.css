@@ -1,0 +1,9 @@
+.active{
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 3px 7px 0 #FFA8A7;
+}
+
+.navbar__list__item a{
+    padding: 0.7rem 1rem;
+}
