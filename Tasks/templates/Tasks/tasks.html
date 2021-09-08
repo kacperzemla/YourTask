@@ -1,4 +1,25 @@
 {% extends 'Tasks/profile.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'Tasks/tasks.css' %}">
+<div class="tasks">
+    <div class="tasks__day">
+        <button class="tasks__button tasks__button-left">
+            <-</button>
+                <div class="tasks__day-wrapper"> 
+                    <h1 class="tasks__header">Today</h1>
+                    <h4 class="tasks__date">November 06 2021</h4>
+                </div>
+                <button class="tasks__button tasks__button-right">-></button>
+    </div>
+    <div class="tasks__list">
+        <button class="tasks__add"></button>
+        <h4>1 unfinished task</h4>
+    </div>
+</div>
+{% endblock %}
+
 
 {% block active %}
 <script>
