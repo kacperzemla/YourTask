@@ -54,8 +54,12 @@
     font-weight: 700;
     color: #fff;
     border-radius: 30px;
+    border: 3px solid #FF725E;
+    font-size: 1.2rem;
 }
 
 .mygoals__header button:hover{
     cursor: pointer;
+    background-color: #fff;
+    color: #FF725E;
 }
