@@ -18,9 +18,23 @@
 
 .tasks__button{
     border-radius: 50%;
-    height: 48px;
-    width: 48px;
+    height: 66px;
+    width: 66px;
+    border: none;
+    color: #666666;
+    background-color: #FF725E;
+    border: 5px solid #FF725E;
 }
+
+.tasks__button:hover{
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.tasks__button:hover img{
+    filter: invert(59%) sepia(60%) saturate(2003%) hue-rotate(321deg) brightness(99%) contrast(103%);
+}
+
 
 .tasks__day-wrapper{
     display: flex;
@@ -31,5 +45,41 @@
 
 .tasks__header{
     margin-bottom: 0;
+    color: #455A64;
 }
 
+.tasks__date{
+    color: #FF725E;
+}
+
+
+.tasks__add{
+    border-radius: 40px;
+    color: white;
+    padding: 1rem 2rem;
+    background-color: #FF725E;
+    border: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border: 5px solid #FF725E;
+}
+
+.tasks__add:hover{
+    cursor: pointer;
+    background-color: #FFF;
+    color: #FF725E;
+}
+
+
+.tasks__list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #455A64;
+    box-shadow: 0 4px 7px 0 #455A64;
+    padding: 1rem 3rem;
+    border-radius: 30px;
+    width: 60%;
+}

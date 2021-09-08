@@ -6,15 +6,15 @@
 <div class="tasks">
     <div class="tasks__day">
         <button class="tasks__button tasks__button-left">
-            <-</button>
+            <img src="{% static 'Tasks/images/arrowleft.svg' %}"></button>
                 <div class="tasks__day-wrapper"> 
                     <h1 class="tasks__header">Today</h1>
                     <h4 class="tasks__date">November 06 2021</h4>
                 </div>
-                <button class="tasks__button tasks__button-right">-></button>
+                <button class="tasks__button tasks__button-right"><img src="{% static 'Tasks/images/arrowright.svg' %}"></button>
     </div>
     <div class="tasks__list">
-        <button class="tasks__add"></button>
+        <button class="tasks__add">Add new task</button>
         <h4>1 unfinished task</h4>
     </div>
 </div>
