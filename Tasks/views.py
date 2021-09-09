@@ -1,3 +1,4 @@
+from Tasks.decorators import unauthenticated_user
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
@@ -6,11 +7,14 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages 
+from .decorators import unauthenticated_user
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def index(request):
     context = {}
     return render(request, 'Tasks/main.html', context)
-    
+
+@unauthenticated_user
 def register(request):
     form = UserCreationForm()
 
@@ -25,6 +29,7 @@ def register(request):
     }
     return render(request, 'Tasks/register.html', context)
 
+@unauthenticated_user
 def loginPage(request):
 
     if request.method  == 'POST':
@@ -36,18 +41,21 @@ def loginPage(request):
             return redirect('profile')
         else:
             messages.info(request, 'Username OR password is incorrect')
-        
+
     context = {}
     return render(request, 'Tasks/login.html', context)
 
+@login_required(login_url='login')
 def logoutUser(request):
     logout(request)
     return redirect('login')
 
+@login_required(login_url='login')
 def profile(request):
     context = {}
     return render(request, 'Tasks/profile.html', context)
 
+@login_required(login_url='login')
 def tasks(request):
     context = {
 
@@ -55,6 +63,7 @@ def tasks(request):
 
     return render(request, 'Tasks/tasks.html', context)
 
+@login_required(login_url='login')
 def goals(request):
     context = {
 
@@ -62,6 +71,7 @@ def goals(request):
 
     return render(request, 'Tasks/goals.html', context)
 
+@login_required(login_url='login')
 def expenses(request):
     context = {
 
