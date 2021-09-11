@@ -1,3 +1,4 @@
+# from Tasks.models import Customer
 from Tasks.decorators import unauthenticated_user
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
@@ -9,6 +10,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages 
 from .decorators import unauthenticated_user
 from django.contrib.auth.decorators import login_required
+
+from .models import *
 # Create your views here.
 def index(request):
     context = {}
@@ -21,9 +24,13 @@ def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
+            Customer.objects.create(
+                user=user,
+                name = user.username,
+            )
             return redirect('login')
-    
+           
     context = {
         'form': form
     }
