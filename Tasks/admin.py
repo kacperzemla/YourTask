@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Todo, Customer
+from .models import Goal, Customer
 # Register your models here.
 
-admin.site.register(Todo)
+admin.site.register(Goal)
 admin.site.register(Customer)

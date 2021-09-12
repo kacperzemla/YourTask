@@ -12,7 +12,8 @@ class Customer(models.Model):
     def __str__(self):
         return self.name
 
-class Todo(models.Model):
+class Goal(models.Model):
+    customer = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
     text = models.CharField(max_length=40)
     complete = models.BooleanField(default=False)
 
