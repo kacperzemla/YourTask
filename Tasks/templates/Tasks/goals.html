@@ -17,6 +17,9 @@
         <div class="mygoals__header">
             <h1>My goals</h1>
             <button id="mygoals__header__button">ADD</button>
+            {% for i in goals %}
+            {{ i.text }}
+            {% endfor %}
         </div>
         <div class="mygoals__list">
             
@@ -25,8 +28,14 @@
 </div>
 
 <div class="bg-modal">
-    <form class="goals-add">
+    <form class="goals-add" method="POST">
         <button class="goals-add__button">X</button>
+
+            {% csrf_token %}
+            {{form.text}}
+            <input class="mybtn" type="submit" value="CREATE">
+
+
     </form>
 </div>
 <script src="{% static 'Tasks/goals.js' %}"></script>
