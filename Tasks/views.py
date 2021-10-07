@@ -75,7 +75,7 @@ def tasks(request):
 def goals(request):
 
     goals = request.user.customer.goal_set.all()
-
+    print(goals)
     customer = request.user.customer
     goal = Goal(customer = customer)
     form = GoalForm()
@@ -91,6 +91,17 @@ def goals(request):
     }
 
     return render(request, 'Tasks/goals.html', context)
+
+def updateGoal(request,goal_id):
+    goal = Goal.objects.get(pk = goal_id)
+    if goal.complete == True:
+        goal.complete = False
+    else:
+        goal.complete = True
+    goal.save()
+
+
+    return redirect('goals')
 
 @login_required(login_url='login')
 def expenses(request):
