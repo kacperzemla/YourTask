@@ -17,12 +17,38 @@
         <div class="mygoals__header">
             <h1>My goals</h1>
             <button id="mygoals__header__button">ADD</button>
-            {% for i in goals %}
-            {{ i.text }}
-            {% endfor %}
+
+
         </div>
         <div class="mygoals__list">
-            
+            <ul class="goals-list">
+                {% for i in goals %}
+                <!-- <a href="{% url 'updateGoal' i.id %}">tak</a>
+                {{ i.text }} -->
+
+                {% if i.complete %}
+                <li>
+                     <a href="{% url 'updateGoal' i.id %}">
+                        <span class="checkbox">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
+                                focusable="false">
+                                <path fill="none" stroke="#FF725E" stroke-width="3"
+                                    d="M1.73 12.91l6.37 6.37L22.79 4.59" />
+                        </span>
+                        </svg>
+                        </a>
+                        {{ i.text }}
+                </li>
+
+                {% else %}
+                <li><a href="{% url 'updateGoal' i.id %}">
+                        <span class="checkbox"></span></a>
+                    {{ i.text }}</li>
+
+                {% endif %}
+
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </div>
@@ -31,9 +57,9 @@
     <form class="goals-add" method="POST">
         <button class="goals-add__button">X</button>
 
-            {% csrf_token %}
-            {{form.text}}
-            <input class="mybtn" type="submit" value="CREATE">
+        {% csrf_token %}
+        {{form.text}}
+        <input class="mybtn" type="submit" value="CREATE">
 
 
     </form>
