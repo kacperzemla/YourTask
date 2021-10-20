@@ -50,7 +50,7 @@ body{
     color: var(--text);
 }
 
-.mygoals__header button{
+.mygoals__header button, .mybtn{
     background-color: #FF725E;
     border: none;
     padding: 1rem;
@@ -61,7 +61,7 @@ body{
     font-size: 1.2rem;
 }
 
-.mygoals__header button:hover{
+.mygoals__header button:hover, .mybtn:hover{
     cursor: pointer;
     background-color: #fff;
     color: #FF725E;
@@ -89,6 +89,10 @@ body{
 .goals-add{
     position: relative;
     border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .goals-add__button{
@@ -133,4 +137,21 @@ body{
     font-weight: bold;
     color: #455A64;
     margin-top: 0.7rem;
+}
+
+#id_text{
+   
+    border: 2px solid #455A64;
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+}
+
+#id_text:focus{
+   
+    outline: none;
+    border: 2px solid #FF725E;
+}
+.mybtn{ 
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
 }
