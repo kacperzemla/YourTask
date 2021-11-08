@@ -21,7 +21,7 @@ Date.prototype.myDate = function(){
 };
 
 dateDay.innerHTML = date.myDate();
-fullDate.innerHTML = date.toLocaleDateString('de-DE')
+fullDate.innerHTML = date.toLocaleDateString('de-DE');
 
 buttonAdd.addEventListener("click", () => {
     formWrap.style.display = "flex";
