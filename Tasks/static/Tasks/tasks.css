@@ -41,6 +41,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 150px;
 }
 
 .tasks__header{

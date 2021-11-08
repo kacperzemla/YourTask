@@ -67,11 +67,11 @@ def profile(request):
 def tasks(request):
     tasks = request.user.customer.task_set.all()
     customer = request.user.customer
-  
+    task = Task(customer=customer)
     form = TaskForm()
 
     if request.method == "POST":
-        form = TaskForm(request.POST)
+        form = TaskForm(request.POST, instance=task)
         if form.is_valid():
             form.save()
             return redirect('tasks')

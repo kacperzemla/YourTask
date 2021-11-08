@@ -4,11 +4,15 @@ const cancelButton = document.querySelector(".goals-add__button")
 const form = document.querySelector(".goals-add")
 const dateDay = document.querySelector(".tasks__header")
 const fullDate = document.querySelector(".tasks__date")
+const tasks = document.querySelectorAll("#task p")
+const tasksList = document.querySelector(".all-tasks")
+const leftButton = document.querySelector(".tasks__button-left")
+const rightButton = document.querySelector(".tasks__button-right")
 
 const date = new Date();
 
-Date.prototype.myDate = function(){
-    let  weekdays = new Array(7);
+Date.prototype.myDate = function () {
+    let weekdays = new Array(7);
     weekdays[0] = "Sunday";
     weekdays[1] = "Monday";
     weekdays[2] = "Tuesday";
@@ -16,12 +20,57 @@ Date.prototype.myDate = function(){
     weekdays[4] = "Thursday";
     weekdays[5] = "Friday";
     weekdays[6] = "Saturday";
-    let day = weekdays[this.getDay()] ;
+    let day = weekdays[this.getDay()];
     return day;
 };
 
-dateDay.innerHTML = date.myDate();
-fullDate.innerHTML = date.toLocaleDateString('de-DE');
+console.log(tasks)
+
+function filter() {
+    for (let task of tasks) {
+        let li = task.parentElement;
+        if (task.innerHTML !== fullDate.innerHTML) {
+            li.hidden = true;
+        } else{
+            li.hidden = false;
+        }
+    
+        
+    }
+
+}
+
+function changeDate(which) {
+    if (which === 'previous') {
+        date.setDate(date.getDate() - 1);
+    } else if (which === 'next') {
+        date.setDate(date.getDate() + 1);
+    }
+}
+
+
+leftButton.addEventListener("click", function () {
+    changeDate('previous');
+   
+    console.log('siema')
+    actualize();
+    filter();
+})
+
+rightButton.addEventListener("click", function () {
+    changeDate('next');
+    actualize();
+    filter();
+})
+
+function actualize() {
+    dateDay.innerHTML = date.myDate();
+    fullDate.innerHTML = date.toLocaleDateString('de-DE');
+}
+
+actualize();
+
+filter();
 
 buttonAdd.addEventListener("click", () => {
     formWrap.style.display = "flex";
