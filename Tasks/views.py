@@ -10,7 +10,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages 
 from .decorators import unauthenticated_user
 from django.contrib.auth.decorators import login_required
-from .forms import GoalForm
+from .forms import GoalForm, TaskForm
 
 from .models import *
 # Create your views here.
@@ -65,8 +65,19 @@ def profile(request):
 
 @login_required(login_url='login')
 def tasks(request):
-    context = {
+    tasks = request.user.customer.task_set.all()
+    customer = request.user.customer
+  
+    form = TaskForm()
 
+    if request.method == "POST":
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('tasks')
+
+    context = {
+        'form': form, 'tasks': tasks
     }
 
     return render(request, 'Tasks/tasks.html', context)
@@ -75,7 +86,7 @@ def tasks(request):
 def goals(request):
 
     goals = request.user.customer.goal_set.all()
-    print(goals)
+
     customer = request.user.customer
     goal = Goal(customer = customer)
     form = GoalForm()
