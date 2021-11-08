@@ -1,9 +1,9 @@
 from Tasks.models import Goal
-from django.forms import ModelForm
+from django.forms import ModelForm, widgets
 from django.contrib.auth.forms import UserCreationForm
-from django import forms
+from django import contrib, forms
 from django.contrib.auth.models import User
-from .models import Goal
+from .models import *
 # Create your models here.
 
 class CreateUserForm(UserCreationForm):
@@ -18,3 +18,12 @@ class GoalForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(GoalForm, self).__init__(*args, **kwargs)
+
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+class TaskForm(ModelForm):
+    class Meta:
+        model = Task
+        fields = ['text', 'date']
+        widgets = {'date': DateInput()}

@@ -16,12 +16,22 @@
     <div class="tasks__list">
         <button class="tasks__add">Add new task</button>
         <h4>1 unfinished task</h4>
+        <ul class="all-tasks">
+            {% for i in tasks %}
+                <li>{{i.text}} <p>{{ i.date }}</p></li>
+                
+            {% endfor %}
+        </ul>
     </div>
 </div>
 
 <div class="bg-modal">
-    <form class="goals-add">
+    <form class="goals-add" method="POST">
         <button class="goals-add__button">X</button>
+        {% csrf_token %}
+        {{form.text}}
+        {{form.date}}
+        <input class="mybtn" type="submit" value="Add new task">
     </form>
 </div>
 
