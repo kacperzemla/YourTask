@@ -17,7 +17,8 @@
         <div class="mygoals__header">
             <h1>My goals</h1>
             <button id="mygoals__header__button">ADD</button>
-
+            <a href="{% url 'deleteGoals' %}"><button >DELETE<br>FINISHED</button></a>
+            
 
         </div>
         <div class="mygoals__list">
@@ -48,7 +49,7 @@
                 {% endif %}
 
                 {% endfor %}
-                <a href="{% url 'deleteGoals' %}"><button >delete</button></a>
+                
             </ul>
         </div>
     </div>

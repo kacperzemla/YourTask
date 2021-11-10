@@ -104,6 +104,7 @@ def goals(request):
 
     return render(request, 'Tasks/goals.html', context)
 
+@login_required(login_url='login')
 def updateGoal(request,goal_id):
     goal = Goal.objects.get(pk = goal_id)
     if goal.complete == True:
@@ -114,6 +115,18 @@ def updateGoal(request,goal_id):
 
 
     return redirect('goals')
+
+@login_required(login_url='login')
+def updateTask(request,pk):
+    task = Task.objects.get(pk=pk)
+    if task.complete == True:
+        task.complete = False
+    else:
+        task.complete = True
+        
+    task.save()
+    return redirect('tasks')
+
 
 @login_required(login_url='login')
 def expenses(request):

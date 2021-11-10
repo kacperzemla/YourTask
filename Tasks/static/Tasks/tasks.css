@@ -130,3 +130,25 @@
     border-color: #FF725E;
     cursor: pointer;
 }
+
+.checkbox{
+    display: inline-grid;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 1px;
+    border-radius: 50%;
+    border: 3px solid #FF725E;
+    margin-right: 5px;
+}
+
+.all-tasks{
+    list-style: none;
+}
+
+.all-list li{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #455A64;
+    margin-top: 0.7rem;
+}

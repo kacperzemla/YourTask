@@ -7,19 +7,36 @@
     <div class="tasks__day">
         <button class="tasks__button tasks__button-left">
             <img src="{% static 'Tasks/images/arrowleft.svg' %}"></button>
-                <div class="tasks__day-wrapper"> 
-                    <h1 class="tasks__header">Today</h1>
-                    <h4 class="tasks__date">November 06 2021</h4>
-                </div>
-                <button class="tasks__button tasks__button-right"><img src="{% static 'Tasks/images/arrowright.svg' %}"></button>
+        <div class="tasks__day-wrapper">
+            <h1 class="tasks__header">Today</h1>
+            <h4 class="tasks__date">November 06 2021</h4>
+        </div>
+        <button class="tasks__button tasks__button-right"><img
+                src="{% static 'Tasks/images/arrowright.svg' %}"></button>
     </div>
     <div class="tasks__list">
         <button class="tasks__add">Add new task</button>
         <h4>1 unfinished task</h4>
         <ul class="all-tasks">
             {% for i in tasks %}
-                <li id="task">{{i.text}} <p>{{ i.date|date:"j.m.Y" }}</p></li>
-                
+                {% if i.complete %}
+                    <li id="task"><a href="{% url 'updateTask' i.id %}">
+                        <span class="checkbox">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
+                                focusable="false">
+                                <path fill="none" stroke="#FF725E" stroke-width="3"
+                                    d="M1.73 12.91l6.37 6.37L22.79 4.59" />
+                        </span>
+                        </svg></a>
+                        {{ i.text }}<p hidden>{{ i.date|date:"j.m.Y" }}</p>
+                    </li>
+
+                {% else %}
+                    <li id="task"><a href="{% url 'updateTask' i.id %}">
+                            <span class="checkbox"></span></a>
+                        {{ i.text }}<p hidden>{{ i.date|date:"j.m.Y" }}</p>
+                    </li>
+                {% endif %} 
             {% endfor %}
         </ul>
     </div>
