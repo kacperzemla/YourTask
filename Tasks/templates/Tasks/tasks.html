@@ -35,11 +35,12 @@
     </form>
 </div>
 
-<script src="{% static 'Tasks/tasks.js' %}"
+<script src="{% static 'Tasks/tasks.js' %}"></script>
 {% endblock %}
 
 
 {% block active %}
+
 <script>
     const page = document.querySelector("#tasks");
     page.classList.add("active")

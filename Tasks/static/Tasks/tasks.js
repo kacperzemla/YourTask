@@ -19,7 +19,7 @@ Date.prototype.myDate = function () {
     weekdays[3] = "Wednesday";
     weekdays[4] = "Thursday";
     weekdays[5] = "Friday";
-    weekdays[6] = "Saturday";
+    weekdays[6] = "Saturday"; 
     let day = weekdays[this.getDay()];
     return day;
 };
@@ -34,8 +34,6 @@ function filter() {
         } else{
             li.hidden = false;
         }
-    
-        
     }
 
 }
@@ -48,11 +46,14 @@ function changeDate(which) {
     }
 }
 
+function actualize() {
+    dateDay.innerHTML = date.myDate();
+    fullDate.innerHTML = date.toLocaleDateString('de-DE');
+}
+
 
 leftButton.addEventListener("click", function () {
     changeDate('previous');
-   
-    console.log('siema')
     actualize();
     filter();
 })
@@ -63,13 +64,10 @@ rightButton.addEventListener("click", function () {
     filter();
 })
 
-function actualize() {
-    dateDay.innerHTML = date.myDate();
-    fullDate.innerHTML = date.toLocaleDateString('de-DE');
-}
+
+
 
 actualize();
-
 filter();
 
 buttonAdd.addEventListener("click", () => {

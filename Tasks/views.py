@@ -60,6 +60,7 @@ def logoutUser(request):
 
 @login_required(login_url='login')
 def profile(request):
+    
     context = {}
     return render(request, 'Tasks/profile.html', context)
 
@@ -121,3 +122,12 @@ def expenses(request):
     }
 
     return render(request, 'Tasks/expenses.html', context)
+
+@login_required(login_url='login')
+def deleteGoals(request):
+    goals = request.user.customer.goal_set.all()
+    for i in goals:
+        if(i.complete == True):
+            i.delete()
+    
+    return redirect('goals')

@@ -10,5 +10,6 @@ urlpatterns = [
     path('goals', views.goals, name='goals'),
     path('tasks',views.tasks, name ='tasks'),
     path('expenses', views.expenses, name='expenses'),
-    path('update/<goal_id>', views.updateGoal, name='updateGoal')
+    path('update/<goal_id>', views.updateGoal, name='updateGoal'),
+    path('deleteGoals', views.deleteGoals, name='deleteGoals'),
 ]
